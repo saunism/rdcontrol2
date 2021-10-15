@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="main_menu">
+            <a href="/"><button class="menu_button">Главная</button></a>
+            <a href="/posts/info"><button class="menu_button">Информация</button></a>
+            <a href="/posts/programmes"><button class="menu_button">Программы</button></a>
+            <a href="/write_article"><button class="menu_button">Написать статью</button></a>
+            
+        </div>
+            <div class="auth_reg">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <p class="post_name">Вход</p>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p align = "center"><button class="error">{{message}}</button></p>       
+                        {% endfor %}
+                    {% endif %}
+                    <p align="center"><input type="text" name="username" class="input" placeholder="Введите Ваш никнейм"></p>
+                    <p align="center"><input type="password" name="password" class="input" placeholder="Введите пароль"></p>
+                    <p align="center"><button type="submit"class="enter">Войти</button></p>
+                    
+                </form>
+            </div>
+    </div>
+    <div class="contact_info">
+                <p class="post_discription">Контакты:</p>
+                <p class="contact">Наш номер: 8-(800)-555-35-35</p>
+                <p class="contact">E-mail: zashiti_malogo@mail.ru</p>
+            </div>
+            <div class="contact_info">
+                    <p class="post_discription">Мы в сети:</p>
+                    <a href="https://facebook.com/VseZivotnyeDomasnie/" target="_blank" ><img src={% static "images/facebook.png" %} alt="" class="social_net"></a>
+                    <a href="https://instagram.com/irisha1961_help_dogicat" target="_blank" ><img src={% static "images/instagram.png" %} alt="" class="social_net"></a>
+                    <a href="https://vk.com/club37551087" target="_blank" ><img src={% static "images/vk.png" %} alt="" class="social_net"></a>
+            </div>
+</body>
+</html>

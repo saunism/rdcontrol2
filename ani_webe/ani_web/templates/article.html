@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title>{{article.article_name}}</title>
+    
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="main_menu">
+            <a href="/"><button class="menu_button">Главная</button></a>
+            <a href="/posts/info"><button class="menu_button">Информация</button></a>
+            <a href="/posts/programmes"><button class="menu_button">Программы</button></a>
+            <a href="/write_article"><button class="menu_button">Написать статью</button></a>
+            
+        </div>
+        <div class="upper_contacts">
+            <img src={% static "images/logo.png" %} alt="" class="logo">
+            <div class="socials">
+                <text class="contact_us">Связаться с нами:</text><br>
+                <a href="https://facebook.com/VseZivotnyeDomasnie/" target="_blank" ><img src={% static "images/facebook.png" %} alt="" class="social_net"></a>
+                <a href="https://instagram.com/irisha1961_help_dogicat" target="_blank" ><img src={% static "images/instagram.png" %} alt="" class="social_net"></a>
+                <a href="https://ok.ru/profile/525640198047" target="_blank" ><img src={% static "images/odnoklassniki.png" %} alt="" class="social_net"></a>
+                <a href="https://vk.com/club37551087" target="_blank" ><img src={% static "images/vk.png" %} alt="" class="social_net"></a>
+                <a href="https://zen.yandex.ru/id/5cad894a78ee6d00af776b34" target="_blank" ><img src={% static "images/yandex.png" %} alt="" class="social_net"></a>
+        </div>
+        </div>
+        <div class="post">
+                <p class="post_discription">Автор: {{article.article_author}}</p>
+                <p class="post_name">{{article.article_name}}</p>              
+                <p class="post_discription">{{article.article_text}}</p>
+                <p class="post_discription">Дата публикации: {{article.article_pub_date}}</p>
+                <a href="/"><p align="center"><button class="read_more">Посмотреть другие статьи</button></p></a>
+                
+            </div>
+            <div class="contact_info">
+                <p class="post_discription">Контакты:</p>
+                <p class="contact">Наш номер: 8-(800)-555-35-35</p>
+                <p class="contact">E-mail: zashiti_malogo@mail.ru</p>
+            </div>
+            <div class="contact_info">
+                    <p class="post_discription">Мы в сети:</p>
+                    <a href="https://facebook.com/VseZivotnyeDomasnie/" target="_blank" ><img src={% static "images/facebook.png" %} alt="" class="social_net"></a>
+                    <a href="https://instagram.com/irisha1961_help_dogicat" target="_blank" ><img src={% static "images/instagram.png" %} alt="" class="social_net"></a>
+                    <a href="https://vk.com/club37551087" target="_blank" ><img src={% static "images/vk.png" %} alt="" class="social_net"></a>
+            </div>
+    </div>
+</body>
